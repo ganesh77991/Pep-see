@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<nav>
+		<a href="/home">Home</a> |  |<a href="/report">End Purchase</a> |
+		<a href="/containerstatus">Container Status</a> |
+	</nav>
+<h2 style="text-align: center;">Container Status</h2>
+<div align="center">
+<table border="1">
+<thead>
+<tr>
+<td>SR</td>
+<td>Container</td>
+<td>Max Capacity</td>
+<td>Available</td>
+</tr>
+
+</thead>
+<tbody>
+<tr th:each="cont:${conts}">
+<td th:text="${cont.containerId}"></td>
+<td th:text="${cont.container}"></td>
+<td th:text="${cont.maxCapacity}"></td>
+<td th:text="${cont.availability}"></td>
+</tr>
+</tbody>
+
+</table>
+</div>
+</body>
+</html>
